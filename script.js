@@ -1,10 +1,10 @@
-let num = 266219;
+const num = 266219;
 
-let numStr = String(num);
+const numArr = Array.from(String(num), Number);
 let res = 1;
 
-for (let i = 0; i <= numStr.length - 1; i++) {
-    res *= +numStr[i];
+for (let i = 0; i <= numArr.length - 1; i++) {
+    res *= numArr[i];
     console.log(res);
 }
 
