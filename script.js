@@ -4,6 +4,4 @@ const numArr = Array.from(String(num), Number);
 let res = numArr.reduce((sum, current) => sum * current);
 console.log(res);
 
-res = res ** 3;
-
-console.log(String(res).slice(0, 2));
+console.log(String(res ** 3).slice(0, 2));
