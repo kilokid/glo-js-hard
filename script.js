@@ -1,29 +1,27 @@
-let lang = 'ru';
+const lang = 'ru';
+const ruDay = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+const enDay = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 // Решите задачу через if
 if (lang === 'ru') {
-    console.log('Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье');
+    console.log(ruDay);
 } else {
-    console.log('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday');
+    console.log(enDay);
 }
 
 // Решите задачу через switch-case
 switch (lang) {
     case 'ru':
-        console.log('Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье');
+        console.log(ruDay);
         break;
     case 'en':
-        console.log('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday');
+        console.log(enDay);
         break;
     default:
         console.log('Непредвиденное значение!');
 }
 
 // Решите задачу через многомерный массив без ифов и switch
-let langArr = [];
-langArr.ru = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
-langArr.en = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-console.log(langArr[lang]);
 
 
 /*
@@ -32,5 +30,7 @@ console.log(langArr[lang]);
 с любым другим значением вывести в консоль “студент”
 Решить задачу с помощью нескольких тернарных операторов, без использования if или switch
 */
-let namePerson = 'Артем';
-namePerson === 'Артем' ? console.log('Директор') : (namePerson === 'Максим' ? console.log('Преподаватель') : console.log('Студент'));
+const namePerson = 'Артем';
+namePerson === 'Артем' ? console.log('Директор') : 
+(namePerson === 'Максим') ? console.log('Преподаватель') 
+: console.log('Студент');
