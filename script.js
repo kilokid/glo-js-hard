@@ -22,12 +22,7 @@ switch (lang) {
 }
 
 // Решите задачу через многомерный массив без ифов и switch
-// const dayArr = [];
-// dayArr.ru = ruDay;
-// dayArr.en = enDay;
-// console.log(dayArr);
-// console.log(dayArr[lang]);
-let days = new Map();
+const days = new Map();
 days.set('ru', ruDay);
 days.set('en', enDay);
 console.log(days.get(lang));
