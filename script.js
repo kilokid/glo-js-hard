@@ -1,9 +1,14 @@
-function examination(str) {
-    if (str != String(str)) {
-        console.log('Была передана не строка');
-    } else if (str.length > 30) {
-        str = str.slice(0, 30) + '...';
+function examination(arg) {
+    let res = 'Была передана не строка';
+    if (typeof arg === 'string') {
+        const str = arg.trim();
+
+        if (str.length > 30) {
+            res = str.slice(0, 30) + '...';
+        } else {
+            res = str;
+        }
     }
-    console.log(str.trim());
+    return res;
 }
-examination('Hello world!');
+console.log(examination('   Hello, world!    '));
