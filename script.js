@@ -14,7 +14,7 @@
 // console.log(examination('   Hello, world!    '));
 
 function examination(arg) {
-    if (typeof arg !== 'string') {
+    if (typeof arg !== 'string' || typeof arg === 'boolean') {
         console.log('Была передана не строка');
         return;
     } else if (arg === +arg) {
@@ -34,3 +34,5 @@ console.log(examination('Hello, world111!'));
 console.log(examination('12331'));
 console.log(examination(12));
 console.log(examination(+''));
+console.log(examination('                                                                   qq '));
+console.log(examination(true));
