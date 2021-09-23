@@ -1,23 +1,8 @@
-// function examination(arg) {
-//     let res = 'Была передана не строка';
-//     if (typeof arg === 'string') {
-//         const str = arg.trim();
-
-//         if (str.length > 30) {
-//             res = str.slice(0, 30) + '...';
-//         } else {
-//             res = str;
-//         }
-//     }
-//     return res;
-// }
-// console.log(examination('   Hello, world!    '));
-
 function examination(arg) {
-    if (typeof arg !== 'string' || typeof arg === 'boolean') {
-        console.log('Была передана не строка');
+    if (typeof arg === 'boolean' ||typeof arg !== 'string' || arg === '' || arg === +'') {
+        console.log('Была передана не строка, или пустая строка');
         return;
-    } else if (arg === +arg) {
+    } else if (arg == +arg) {
         console.log('В переданной строке только цифры');
         return;
     }
@@ -28,11 +13,6 @@ function examination(arg) {
     }
     return str;
 }
-console.log(examination('Hello, world!'));
-console.log(examination('Hello, world! Hello, world! Hello, world! Hello, world! Hello, world!'));
-console.log(examination('Hello, world111!'));
-console.log(examination('12331'));
-console.log(examination(12));
-console.log(examination(+''));
-console.log(examination('                                                                   qq '));
 console.log(examination(true));
+console.log(examination(+''));
+console.log(examination(''));
