@@ -1,11 +1,11 @@
-// const arr = ['232', '5', '132', '88', '1323', '123', '768'];
-// let res = [];
-// arr.forEach((item) => {
-//     if (item[0] == 2 || item[0] == 4) {
-//         res.push(item);
-//     }
-// });
-// console.log(res);
+const arr = ['232', '5', '132', '88', '1323', '123', '768'];
+let res = [];
+arr.forEach((item) => {
+    if (item[0] == 2 || item[0] == 4) {
+        res.push(item);
+    }
+});
+console.log(res);
 
 function simpleNum(num) {
     for (let i = 2; i < num; i++) {
