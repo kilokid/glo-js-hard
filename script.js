@@ -1,8 +1,9 @@
+const onlyNumber = /^\d+$/;
 function examination(arg) {
-    if (typeof arg === 'boolean' ||typeof arg !== 'string' || arg === '' || arg === +'') {
+    if (typeof arg !== 'string' || arg === '') {
         console.log('Была передана не строка, или пустая строка');
         return;
-    } else if (arg == +arg) {
+    } else if (onlyNumber.test(arg)) {
         console.log('В переданной строке только цифры');
         return;
     }
@@ -13,6 +14,7 @@ function examination(arg) {
     }
     return str;
 }
-console.log(examination(true));
-console.log(examination(+''));
-console.log(examination(''));
+
+console.log(examination('1234'));
+console.log(examination('sdc'));
+console.log(examination('       helloo'));
