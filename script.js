@@ -1,15 +1,45 @@
 'use strict';
 
-const week  = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
-const day = document.querySelectorAll('.day-of-week');
-const today = new Date();
+// const week  = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+// const today = new Date();
+// let numWeekDay = today.getDay();
 
-week.forEach((item, i, week) => {
-    if (item === 'Суббота' || item === 'Воскресенье') {
-        day[i].innerHTML = week[i].italics();
-    } else if (i === today.getDay() - 1) {
-        day[i].innerHTML = week[i].bold();
+// if (numWeekDay === 0) {
+//     numWeekDay = 6;
+// } else {
+//     numWeekDay--;
+// }
+
+// week.forEach((day, i) => {
+//     let str = day;
+//     if (i === numWeekDay) {
+//         str = `<b>${day}</b>`;
+//     } else {
+//         str = `${day}`;
+//     }
+
+//     if (i === 5 || i === 6) {
+//         str = `<i>${str}</i>`;
+//     }
+//     document.body.nsertAdjacentHTML('beforeend', `<div>${str}</div>`);
+// });
+
+const week = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+const div = document.createElement('div');
+document.body.append(div);
+
+const today = new Date();
+let numWeekDay = today.getDay();
+
+week.forEach((day, i) => {
+    let str = day;
+    if (i === (numWeekDay - 1)) {
+        str = `<b>${day}</b>`;
     } else {
-        day[i].innerHTML = week[i];
+        str = `${day}`;
     }
+    if (i === 5 || i === 6) {
+        str = `<i>${str}</i>`; 
+    }
+    div.insertAdjacentHTML('beforeend', `<p>${str}</p>`);
 });
