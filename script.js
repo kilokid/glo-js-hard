@@ -1,20 +1,21 @@
 'use strict';
 
-const week = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
-const div = document.createElement('div');
-document.body.append(div);
+// const week = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+const week = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];   
+// const todayDay = new Date().toLocaleString('ru');
+const wrap = document.createElement('ul');
+document.body.append(wrap);
 
-const today = new Date();
-let numWeekDay = today.getDay();
-
-week.forEach((day, i) => {
-    let str = day;
-    if (i === (numWeekDay - 1)) {
-        str = `<b>${day}</b>`;
+week.forEach((day) => {
+    const li = document.createElement('li');
+    li.style.listStyleType = 'none';
+    li.textContent = day;
+    if (day === week[5] || day === week[6]) {
+        li.style.fontStyle = 'italic';
+    } if (week[new Date().getDay()] === day) {
+        li.style.fontWeight = 'bold';
     }
-
-    if (i === 5 || i === 6) {
-        str = `<i>${str}</i>`; 
-    }
-    div.insertAdjacentHTML('beforeend', `<p>${str}</p>`);
+    wrap.append(li);
 });
+const li = wrap.querySelectorAll('li');
+li[6].after(li[0]);
