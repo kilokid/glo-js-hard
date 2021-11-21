@@ -1,8 +1,6 @@
 'use strict';
 
-// const week = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
 const week = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];   
-// const todayDay = new Date().toLocaleString('ru');
 const wrap = document.createElement('ul');
 document.body.append(wrap);
 
@@ -17,5 +15,6 @@ week.forEach((day) => {
     }
     wrap.append(li);
 });
+
 const li = wrap.querySelectorAll('li');
 li[6].after(li[0]);
